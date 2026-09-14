@@ -1,8 +1,9 @@
+import os
 import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine,text
 engine = create_engine(
-    "mysql+pymysql://root:gopi_ramesh@localhost/project_db"
+    "mysql+pymysql://root:{os.getenv('MYSQL_PASSWORD')}@localhost/project_db"
 )
 print("MySql connected successfully!")
 
